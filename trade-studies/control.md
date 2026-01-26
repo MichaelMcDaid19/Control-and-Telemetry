@@ -1,232 +1,195 @@
-# RC Car Landspeed World Record – Trade Study (UK)  
-**Scope:** controller interface (human controls), transmitter + receiver (control link), and telemetry (downlink).  
-**Range targets:** “cheap & good enough” (few hundred m), and **long-range up to ~5 km** (clear line-of-sight, correct antennas, and testing required).
+# RC Car Landspeed Record (UK) – Controller + Radio Link Trade Study
+
+**Goal:** give you *lots of options*, kept simple.
+**Range buckets:**
+
+* **Budget / short-range**: ~0.1–0.8 km (typical 2.4 GHz “surface” setups; sometimes more in perfect LOS)
+* **Long-range / up to ~5 km**: usually **868 MHz** systems + good antennas + elevated ground station + testing
+
+## UK legality quick note (important for long-range)
+
+* UK/EU **868 MHz SRD** rules have power/duty-cycle/LBT details depending on sub-band. Start here:
+
+  * Ofcom SRD overview: [https://www.ofcom.org.uk/spectrum/radio-equipment/short-range-devices](https://www.ofcom.org.uk/spectrum/radio-equipment/short-range-devices)
+* Some retailers explicitly warn about legality/firmware for certain ELRS modules:
+
+  * Example warning on Bandit module listing: [https://www.flyingtech.co.uk/product/bandit-expresslrs-915-868mhz-rf-module/](https://www.flyingtech.co.uk/product/bandit-expresslrs-915-868mhz-rf-module/)
 
 ---
 
-## Quick picks (if you just want a short list)
+# 1) Controller Interface Options (what you hold)
 
-### If you genuinely need ~5 km reliability
-**Most “plug-and-go proven” path:** **TBS Crossfire (868)**  
-- **Gamepad TX:** **TBS Tango 2** (Crossfire built in) – **£159.90, in stock** :contentReference[oaicite:0]{index=0}  
-- **RX:** **TBS Crossfire Nano RX (SE)** – **~£29.90, in stock** :contentReference[oaicite:1]{index=1}  
-- **Why:** UHF 868 penetrates better and holds link margin far beyond typical 2.4 GHz surface radios.
+## A) Wheel / pistol-grip (best “car feel”)
 
-### If you want cheap short/mid-range (and simple)
-- **FlySky GT5 + BS6 RX** – **£102.99** (UK retailer) :contentReference[oaicite:2]{index=2}  
-- **RadioLink RC6GS V3 + R7FG** – **£99.74, in stock** :contentReference[oaicite:3]{index=3}  
-- **DumboRC X6PM set** – **£34.99 (listed), but sold out at that listing** :contentReference[oaicite:4]{index=4}  
+**Budget → Premium choices**
 
----
+* **DumboRC X6PM set** (ultra budget): [https://www.seriousrc.co.uk/products/dumbo-rc-x6pm-350-p6f-gyro-2-4ghz-6-channel-transmitter-receiver-set](https://www.seriousrc.co.uk/products/dumbo-rc-x6pm-350-p6f-gyro-2-4ghz-6-channel-transmitter-receiver-set)
+* **FlySky GT5 + RX** (budget, common): [https://www.rcmodelz.co.uk/flysky-fs-gt5-6-channel-transmitter-receiver.html](https://www.rcmodelz.co.uk/flysky-fs-gt5-6-channel-transmitter-receiver.html)
+* **RadioLink RC6GS V3 + RX** (value, often quoted ~600 m class): [https://wheelspinmodels.co.uk/i/radiolink-rc6gs-v3-7channel-surface-315779/](https://wheelspinmodels.co.uk/i/radiolink-rc6gs-v3-7channel-surface-315779/)
+* **Futaba T4PM Plus + RX** (premium feel): [https://wheelspinmodels.co.uk/i/futaba-t4pm-plus-with-r334sbse-receiver-352854/](https://wheelspinmodels.co.uk/i/futaba-t4pm-plus-with-r334sbse-receiver-352854/)
+* **Sanwa MT-5 + RX** (premium feel): [https://www.hertsrcmodels.co.uk/products/mt-5-radio-set-with-rx-493-receiver](https://www.hertsrcmodels.co.uk/products/mt-5-radio-set-with-rx-493-receiver)
+* **Sanwa M17S + RX** (top-end): [https://www.modelsport.co.uk/product/sanwa-m17s-radio-set-with-rx493i-1367194](https://www.modelsport.co.uk/product/sanwa-m17s-radio-set-with-rx493i-1367194)
+* **RadioLink RC8X kit** (feature-rich): [https://wheelspinmodels.co.uk/i/radiolink-rc8x-transmitter-with-1x-r8fg-and-1x-357032/](https://wheelspinmodels.co.uk/i/radiolink-rc8x-transmitter-with-1x-r8fg-and-1x-357032/)
+* **FlySky Noble NB4 Pro+** (premium): [https://scmodels.co.uk/flysky-noble-nb4-pro-2-4ghz-transmitter-2-receivers-nb4pro-plus](https://scmodels.co.uk/flysky-noble-nb4-pro-2-4ghz-transmitter-2-receivers-nb4pro-plus)
 
-# 1) Controller interface trade study (how you drive it)
+### Special mention: **RadioMaster MT12 (wheel + EdgeTX)**
 
-## A) Pistol-grip “surface” radios (most intuitive at high speed)
-**Pros**
-- Best for steering precision + throttle modulation at extreme speed.
-- Ergonomics are designed for cars.
+This is a big one because it can act like a “surface radio” **and** be part of long-range module ecosystems.
 
-**Cons**
-- Most are **2.4 GHz** and not designed for multi-km out of the box.
-
-**Notable options (UK pricing / availability):**
-- **RadioMaster MT12 (surface, EdgeTX)** – **£129.99, in stock** :contentReference[oaicite:5]{index=5}  
-  - Big deal: it’s open + has a module bay that can take long-range modules (e.g., Crossfire Nano module class). :contentReference[oaicite:6]{index=6}  
-- **Futaba T4PM Plus (with RX)** – **£242.99, in stock** :contentReference[oaicite:7]{index=7}  
-- **Sanwa MT-5 (with RX)** – **£260.99** :contentReference[oaicite:8]{index=8}  
-- **RadioLink RC8X kit** – **£365.74** :contentReference[oaicite:9]{index=9}  
-- **FlySky Noble NB4 Pro+ (premium wheel radio)** – **£429.00, in stock** :contentReference[oaicite:10]{index=10}  
-  - Note: product page claims “>300 m (open ground)” for that system. :contentReference[oaicite:11]{index=11}  
-
-## B) Gamepad-style controllers (compact, easy to hold steady)
-**Pros**
-- Comfortable for long runs, easy to brace on a tripod/stand.
-- Great pairing with long-range FPV-style links.
-
-**Cons**
-- Less “car native” than a wheel for some drivers.
-
-**Options**
-- **TBS Tango 2 (Crossfire inside)** – **£159.90, in stock** :contentReference[oaicite:12]{index=12}  
-
-## C) Stick radios (aircraft style) – surprisingly strong for long-range
-**Pros**
-- Massive ecosystem (EdgeTX/OpenTX), easy to add long-range modules, logging, custom switches.
-- Best if you’ll later add autopilot/“flight controller”-like logic.
-
-**Cons**
-- Steering on a stick can be harder at very high speed unless you practice.
-
-**Options**
-- **RadioMaster Boxer (ELRS)** – **£139.99, in stock** :contentReference[oaicite:13]{index=13}  
-- **RadioMaster TX16S MKII (4in1)** – **£180.00, in stock** :contentReference[oaicite:14]{index=14}  
+* MT12 product page: [https://www.hobbyrc.co.uk/radiomaster-mt12-surface-radio-controller](https://www.hobbyrc.co.uk/radiomaster-mt12-surface-radio-controller)
 
 ---
 
-# 2) Transmitter + receiver (CONTROL LINK) trade study
+## B) Gamepad-style (easy to hold steady, great for long-range ecosystems)
 
-## Range reality check (simple rule)
-- **2.4 GHz surface radios:** usually “plenty” for normal RC, but **multi-km is not what most are designed for**.
-- **868 MHz UHF (UK):** the common choice when you truly need km-class reliability.
+* **TBS Tango 2 (Crossfire built-in)**: [https://www.hobbyrc.co.uk/tbs-tango-2-transmitter](https://www.hobbyrc.co.uk/tbs-tango-2-transmitter)
 
 ---
 
-## A) Cheaper short-range (best value; likely fine if you’re not actually multi-km)
-These are “cheap and cheerful” picks if your actual operator position stays close to the run (or you can follow the car).
+## C) Stick radios (aircraft style, strong long-range ecosystem support)
 
-### 1) DumboRC (very budget)
-- **TX+RX set:** **£34.99 (listed)** (example listing shows sold out) :contentReference[oaicite:15]{index=15}  
-**Benefits:** extremely low cost, quick to get running.  
-**Drawbacks:** not the link you choose for a record attempt where failsafe margin matters.
-
-### 2) FlySky GT5 (budget, popular)
-- **TX+RX:** **£102.99** :contentReference[oaicite:16]{index=16}  
-**Benefits:** solid budget feature set, common ecosystem.  
-**Drawbacks:** still fundamentally a typical 2.4 GHz surface link (test range carefully).
-
-### 3) RadioLink RC6GS V3 (value + telemetry/gyro receiver)
-- **TX+RX:** **£99.74, in stock** :contentReference[oaicite:17]{index=17}  
-- Page lists “ground distance up to 600 m.” :contentReference[oaicite:18]{index=18}  
-**Benefits:** good feature/price, telemetry support, respectable spec.  
-**Drawbacks:** “600 m” class is not “5 km class”.
+* **RadioMaster Boxer (ELRS)**: [https://www.hobbyrc.co.uk/radiomaster-boxer-transmitter-elrs](https://www.hobbyrc.co.uk/radiomaster-boxer-transmitter-elrs)
+* **RadioMaster TX16S MKII (4in1)**: [https://www.hobbyrc.co.uk/radiomaster-tx16s-mkii-hall-gimbal-transmitter-4in1](https://www.hobbyrc.co.uk/radiomaster-tx16s-mkii-hall-gimbal-transmitter-4in1)
 
 ---
 
-## B) Higher-end 2.4 GHz surface radios (excellent feel; still not “true 5 km”)
-### 1) Futaba T4PM Plus
-- **£242.99, in stock** :contentReference[oaicite:19]{index=19}  
-**Benefits:** top-tier control feel, reliability, racing pedigree.  
-**Drawbacks:** still 2.4 GHz; don’t assume multi-km without testing.
+# 2) Control Link (Transmitter + Receiver) Options
 
-### 2) Sanwa MT-5
-- **£260.99** :contentReference[oaicite:20]{index=20}  
-**Benefits:** very strong performance/latency reputation in racing circles.  
-**Drawbacks:** same “2.4 GHz range ceiling” concern.
+## A) Cheaper / short-range 2.4 GHz (good if you can stay closer)
 
-### 3) RadioLink RC8X
-- **£365.74** :contentReference[oaicite:21]{index=21}  
-**Benefits:** very feature-rich; page states “600 m range.” :contentReference[oaicite:22]{index=22}  
-**Drawbacks:** pricey for a “not truly multi-km” class system.
+These are often “good enough” if your operator position is within a few hundred meters (or you can follow the car).
 
-### 4) FlySky Noble NB4 Pro+
-- **£429.00, in stock** :contentReference[oaicite:23]{index=23}  
-**Benefits:** premium ergonomics + features.  
-**Drawbacks:** page itself quotes **>300 m open ground**, so you should not treat it as a km-class system. :contentReference[oaicite:24]{index=24}  
+### Budget
 
----
+* **DumboRC X6PM set (~£35 listed, varies stock)**
+  [https://www.seriousrc.co.uk/products/dumbo-rc-x6pm-350-p6f-gyro-2-4ghz-6-channel-transmitter-receiver-set](https://www.seriousrc.co.uk/products/dumbo-rc-x6pm-350-p6f-gyro-2-4ghz-6-channel-transmitter-receiver-set)
 
-## C) Long-range (up to ~5 km) – the “record attempt” category
+### Budget but better supported
 
-### Option C1) **TBS Crossfire (868 MHz) – most straightforward**
-**Transmitter-side choices**
-- **TBS Tango 2 (Crossfire built in):** **£159.90, in stock** :contentReference[oaicite:25]{index=25}  
-- **Crossfire Micro TX V2 module:** **£74.90 (listing shows out of stock)** :contentReference[oaicite:26]{index=26}  
-- **Crossfire full-size module:** **£214.90 (listing shows out of stock)** :contentReference[oaicite:27]{index=27}  
-- **Micro TX V2 Starter Set (module + 3 receivers):** **£119.90, only 2 left** :contentReference[oaicite:28]{index=28}  
+* **FlySky GT5 (~£103)**
+  [https://www.rcmodelz.co.uk/flysky-fs-gt5-6-channel-transmitter-receiver.html](https://www.rcmodelz.co.uk/flysky-fs-gt5-6-channel-transmitter-receiver.html)
+* **RadioLink RC6GS V3 (~£100)**
+  [https://wheelspinmodels.co.uk/i/radiolink-rc6gs-v3-7channel-surface-315779/](https://wheelspinmodels.co.uk/i/radiolink-rc6gs-v3-7channel-surface-315779/)
 
-**Receiver choices**
-- **Crossfire Nano RX (SE):** **£29.90, in stock** :contentReference[oaicite:29]{index=29}  
+### Premium 2.4 GHz surface (great feel, but still not “guaranteed 5 km”)
 
-**Benefits**
-- Designed for long range; strong ecosystem; commonly used for km-class control links.
-- Works well with directional antennas and elevated ground station setups.
-
-**Drawbacks**
-- More expensive than budget 2.4 GHz.
-- You must configure failsafe and thoroughly validate before high-speed runs.
+* **Futaba T4PM Plus**
+  [https://wheelspinmodels.co.uk/i/futaba-t4pm-plus-with-r334sbse-receiver-352854/](https://wheelspinmodels.co.uk/i/futaba-t4pm-plus-with-r334sbse-receiver-352854/)
+* **Sanwa MT-5**
+  [https://www.hertsrcmodels.co.uk/products/mt-5-radio-set-with-rx-493-receiver](https://www.hertsrcmodels.co.uk/products/mt-5-radio-set-with-rx-493-receiver)
+* **Sanwa M17S**
+  [https://www.modelsport.co.uk/product/sanwa-m17s-radio-set-with-rx493i-1367194](https://www.modelsport.co.uk/product/sanwa-m17s-radio-set-with-rx493i-1367194)
+* **RadioLink RC8X**
+  [https://wheelspinmodels.co.uk/i/radiolink-rc8x-transmitter-with-1x-r8fg-and-1x-357032/](https://wheelspinmodels.co.uk/i/radiolink-rc8x-transmitter-with-1x-r8fg-and-1x-357032/)
 
 ---
 
-### Option C2) **ExpressLRS 868 MHz (ELRS) – potentially cheaper, BUT UK compliance is tricky**
-**TX module example**
-- **Bandit 915/868 RF Module:** **£99.50, only 2 left** :contentReference[oaicite:30]{index=30}  
-  - That same listing warns it’s **not UK legal** (no LBT firmware per that seller’s note). :contentReference[oaicite:31]{index=31}  
+## B) Long-range (up to ~5 km): **868 MHz class** (recommended for record attempts)
 
-**Receiver examples**
-- **RadioMaster Bandit BR1 868 RX:** **£19.99, in stock** :contentReference[oaicite:32]{index=32}  
-- **Sequre 915/868 True Diversity RX:** **£22.00** :contentReference[oaicite:33]{index=33}  
-- **Happymodel ES900 Dual Diversity 868 RX:** **£17.59** :contentReference[oaicite:34]{index=34}  
+### Option B1: **TBS Crossfire 868** (most “proven long-range RC” vibe)
 
-**Benefits**
-- Very low receiver cost; lots of hardware choices.
-- Great performance *when configured legally and correctly*.
+**Transmitter choices**
 
-**Drawbacks (important)**
-- UK rules + LBT/regional settings matter; sellers explicitly warn about legality depending on firmware/band. :contentReference[oaicite:35]{index=35}  
-- If you want the “least regulatory headache,” Crossfire is usually simpler in practice.
+* **TBS Tango 2 (Crossfire built-in)**: [https://www.hobbyrc.co.uk/tbs-tango-2-transmitter](https://www.hobbyrc.co.uk/tbs-tango-2-transmitter)
+* **Crossfire Micro TX V2 Starter Set (module + 3 RX)**: [https://www.flyingtech.co.uk/product/tbs-crossfire-micro-tx-v2-starter-set/](https://www.flyingtech.co.uk/product/tbs-crossfire-micro-tx-v2-starter-set/)
 
----
+**Receiver**
 
-## D) “Best-of-both” hybrid approach (common for record projects)
-**Idea:** Use a **very robust long-range control link** (Crossfire/868), and handle **telemetry separately** (either on the same link, or via a dedicated modem).
-
-**Why do this?**
-- Control stays rock solid; telemetry can be tuned/expanded without risking steering/throttle.
-
----
-
-# 3) Telemetry (DOWNLINK) options (UK)
-
-## A) Use telemetry built into the control system (simplest)
-**Pros**
-- One radio link to manage.
-- Enough for “link health + battery + basic sensors” if your RX/FC supports it.
-
-**Cons**
-- Telemetry bandwidth is limited; adding lots of sensors/logging can be painful.
-
-(Example: some systems like RadioLink RC6GS advertise telemetry features. :contentReference[oaicite:36]{index=36})
-
-## B) Dedicated long-range telemetry modem (separate “data pipe”)
-**Option:** **RFD868x v2 (868 MHz telemetry modem)**
-- Example bundle listing: **£280.00** :contentReference[oaicite:37]{index=37}  
-- Another UK listing shows **£120.83** (single modem) :contentReference[oaicite:38]{index=38}  
-- Another listing shows **£97.53** (out of stock) :contentReference[oaicite:39]{index=39}  
-
-**How it’s used (simple):**
-- You typically need **two units** (ground + vehicle), plus antennas.
-- Run telemetry (speed, battery, temps, GPS if used) through this link.
+* **Crossfire Nano RX SE**: [https://yourfpv.co.uk/product/tbs-crossfire-nano-rx-se/](https://yourfpv.co.uk/product/tbs-crossfire-nano-rx-se/)
 
 **Pros**
-- Can be extremely robust for telemetry, independent of the control link.
-- Easier to scale telemetry features.
+
+* Very common in km-class RC/FPV usage
+* Strong link + telemetry ecosystem
 
 **Cons**
-- Extra cost, wiring, antennas, integration work.
+
+* Costs more than budget 2.4 GHz
+* Still needs careful antenna setup + testing
 
 ---
 
-# 4) Receiver integration notes (because your “flight controller” is unknown)
+### Option B2: **ExpressLRS 868** (cheaper hardware, more DIY / compliance awareness)
 
-You’ll likely face one of these:
-1) **Direct PWM** to ESC + steering servo (simplest)
-2) Serial protocol (**CRSF**, etc.) into a controller/autopilot, which then outputs to ESC/servo
+**TX module**
 
-**Practical advice**
-- If you don’t know the controller yet, pick an RX path that can still do **PWM output today** (so you can drive ESC/servo immediately).
-- Crossfire Nano RX is often used with CRSF; many users pair it with a controller that understands CRSF. (If you want PWM-only, you’ll plan for a CRSF→PWM solution or a receiver that provides PWM outputs.)
+* **Bandit 915/868 RF Module** (note retailer legality warning):
+  [https://www.flyingtech.co.uk/product/bandit-expresslrs-915-868mhz-rf-module/](https://www.flyingtech.co.uk/product/bandit-expresslrs-915-868mhz-rf-module/)
 
----
+**Receivers (examples)**
 
-# 5) Simple decision guide (choose based on your real range)
+* **RadioMaster Bandit BR1 868 RX**: [https://www.hobbyrc.co.uk/radiomaster-bandit-br1-868mhz-elrs-receiver](https://www.hobbyrc.co.uk/radiomaster-bandit-br1-868mhz-elrs-receiver)
+* **Sequre True Diversity 915/868 RX**: [https://www.flyingtech.co.uk/product/sequre-915mhz-868mhz-dual-rx-true-diversity-expresslrs-elrs-receiver-dual-antenna/](https://www.flyingtech.co.uk/product/sequre-915mhz-868mhz-dual-rx-true-diversity-expresslrs-elrs-receiver-dual-antenna/)
+* **Happymodel ES900 Dual Diversity 868 RX**: [https://www.unmannedtechshop.co.uk/products/happymodel-es900-dual-diversity-868mhz-expresslrs-tcxo-receiver-elrs](https://www.unmannedtechshop.co.uk/products/happymodel-es900-dual-diversity-868mhz-expresslrs-tcxo-receiver-elrs)
 
-## If your operator can stay within ~0.5–1 km of the car
-Pick a good 2.4 GHz surface system:
-- **RadioLink RC6GS V3** (~£99.74) :contentReference[oaicite:40]{index=40}  
-- **FlySky GT5** (~£102.99) :contentReference[oaicite:41]{index=41}  
-- **Futaba / Sanwa** if you want premium feel :contentReference[oaicite:42]{index=42}  
+**Pros**
 
-## If you want “5 km class” margin
-Pick 868 control:
-- **TBS Tango 2 + Crossfire Nano RX** :contentReference[oaicite:43]{index=43}  
-or  
-- **Surface wheel feel + long-range:** **RadioMaster MT12** + long-range module capability :contentReference[oaicite:44]{index=44}  
+* Very low receiver cost
+* Diversity receiver options are cheap
+* Powerful telemetry tooling *if configured correctly*
 
-## If you want maximum instrumentation
-- **Crossfire (control)** + **RFD868x (telemetry)** :contentReference[oaicite:45]{index=45}  
+**Cons**
+
+* More “you own the setup” (firmware region/LBT considerations)
+* Pay attention to UK/EU rules: [https://www.ofcom.org.uk/spectrum/radio-equipment/short-range-devices](https://www.ofcom.org.uk/spectrum/radio-equipment/short-range-devices)
 
 ---
 
-## If you want, I can also output this as:
-- a “shopping list” (3 builds: budget / mid / record-grade),
-- and a one-page test plan (range test, failsafe validation, antenna placement checklist).
+# 3) Telemetry (Downlink) Options (simple)
+
+## A) Telemetry via the same RC link (simplest)
+
+* Works if your radio system supports it and you don’t need huge bandwidth.
+* Lowest complexity.
+
+## B) Dedicated telemetry modem (separate data pipe)
+
+**RFD868x (examples)**
+
+* Single modem listing: [https://shop.thebioniceye.co.uk/products/rfd868xmodem](https://shop.thebioniceye.co.uk/products/rfd868xmodem)
+* Another UK listing: [https://www.3dxr.co.uk/radio-gear-c33/telemetry-c31/868-mhz-telemetry-c65/rf-design-rfd-868ux-v2-modem-p3750](https://www.3dxr.co.uk/radio-gear-c33/telemetry-c31/868-mhz-telemetry-c65/rf-design-rfd-868ux-v2-modem-p3750)
+* Bundle listing (often out of stock): [https://www.unmannedtechshop.co.uk/products/rf-design-rfd-868x-long-range-telemetry-modem-bundle](https://www.unmannedtechshop.co.uk/products/rf-design-rfd-868x-long-range-telemetry-modem-bundle)
+
+**Pros**
+
+* Telemetry stays strong even if RC link is busy
+* Great for logging speed/temps/voltage
+
+**Cons**
+
+* Extra hardware + integration + antennas
+
+---
+
+# 4) Simple “Build Recipes” (shopping-list style)
+
+## Build 1 — Cheapest usable (short range)
+
+* DumboRC X6PM set: [https://www.seriousrc.co.uk/products/dumbo-rc-x6pm-350-p6f-gyro-2-4ghz-6-channel-transmitter-receiver-set](https://www.seriousrc.co.uk/products/dumbo-rc-x6pm-350-p6f-gyro-2-4ghz-6-channel-transmitter-receiver-set)
+  **Best for:** early bench + low-speed shakedown.
+  **Risk:** not what you pick for record-speed safety margin.
+
+## Build 2 — Best value short/mid range
+
+Pick one:
+
+* FlySky GT5: [https://www.rcmodelz.co.uk/flysky-fs-gt5-6-channel-transmitter-receiver.html](https://www.rcmodelz.co.uk/flysky-fs-gt5-6-channel-transmitter-receiver.html)
+* RadioLink RC6GS V3: [https://wheelspinmodels.co.uk/i/radiolink-rc6gs-v3-7channel-surface-315779/](https://wheelspinmodels.co.uk/i/radiolink-rc6gs-v3-7channel-surface-315779/)
+  **Best for:** most “normal” RC use, tight budgets.
+
+## Build 3 — Long-range “record attempt” control (most recommended)
+
+Pick one ecosystem:
+
+### 3A) Crossfire (simple, proven)
+
+* TX: TBS Tango 2: [https://www.hobbyrc.co.uk/tbs-tango-2-transmitter](https://www.hobbyrc.co.uk/tbs-tango-2-transmitter)
+* RX: Crossfire Nano RX SE: [https://yourfpv.co.uk/product/tbs-crossfire-nano-rx-se/](https://yourfpv.co.uk/product/tbs-crossfire-nano-rx-se/)
+
+### 3B) ELRS 868 (cheaper, more DIY)
+
+* TX module: Bandit 915/868 module (read warning): [https://www.flyingtech.co.uk/product/bandit-expresslrs-915-868mhz-rf-module/](https://www.flyingtech.co.uk/product/bandit-expresslrs-915-868mhz-rf-module/)
+* RX: choose a diversity 868 RX (better fade resistance):
+
+  * Sequre diversity RX: [https://www.flyingtech.co.uk/product/sequre-915mhz-868mhz-dual-rx-true-diversity-expresslrs-elrs-receiver-dual-antenna/](https://www.flyingtech.co.uk/product/sequre-915mhz-868mhz-dual-rx-true-diversity-expresslrs-elrs-receiver-dual-antenna/)
+  * Happymodel dual diversity: [https://www.unmannedtechshop.co.uk/products/happymodel-es900-dual-diversity-868mhz-expresslrs-tcxo-receiver-elrs](https://www.unmannedtechshop.co.uk/products/happymodel-es900-dual-diversity-868mhz-expresslrs-tcxo-receiver-elrs)
